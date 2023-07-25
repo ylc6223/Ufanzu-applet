@@ -24,55 +24,46 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from "vue";
-import { eventCenter } from '@tarojs/taro'
-import Taro from '@tarojs/taro'
+import {computed} from 'vue'
+// import { eventCenter } from '@tarojs/taro'
+// import Taro from '@tarojs/taro'
 import { timeagoInst, Thread_DETAIL_NAVIGATE } from '../utils/api'
 import './thread.css'
 
 interface Props {
   title: string
   member: object
-  last_modified: string
+  last_modified: number
   replies: string
   node: object
   not_navi: boolean
   tid: string
+
+  [propertyName: string]: any
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  not_navi: false,
+})
 const time = computed(() => {
   return timeagoInst.format(last_modified * 1000, 'zh')
 })
-// export default {
-//   props: ['title', 'member', 'last_modified', 'replies', 'node', 'not_navi', 'tid'],
-//   computed: {
-//     // time() {
-//     //   return timeagoInst.format(this.last_modified * 1000, 'zh')
-//     // },
-//     usernameCls() {
-//       return `author ${this.not_navi ? 'bold' : ''}`
-//     },
-//   },
-//   // filters: {
-//   //   url(val) {
-//   //     return 'https:' + val
-//   //   },
-//   // },
-//   methods: {
-//     handleNavigate() {
-//       const { tid, not_navi } = this.$props
-//       if (not_navi) {
-//         return
-//       }
-//       eventCenter.trigger(Thread_DETAIL_NAVIGATE, this.$props)
-//       // 跳转到帖子详情
-//       Taro.navigateTo({
-//         url: '/pages/thread_detail/thread_detail',
-//       })
-//     },
-//   },
-// }
+
+const usernameCls = computed(() => {
+  return `author ${not_navi ? 'bold' : ''}`
+})
+
+function handleNavigate() {
+  // const { tid, not_navi } = this.$props
+  // if (not_navi) {
+  //   return
+  // }
+  // eventCenter.trigger(Thread_DETAIL_NAVIGATE, this.$props)
+  // 跳转到帖子详情
+  Taro.navigateTo({
+    url: '/pages/thread_detail/thread_detail',
+  })
+}
 </script>
 <style lang="scss">
 .info > view > image.avatar {

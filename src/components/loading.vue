@@ -1,13 +1,9 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-<view>
-  <text>loading</text>
-</view>
+  <view>
+    <text>loading</text>
+  </view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
