@@ -1,6 +1,7 @@
 import Components from 'unplugin-vue-components/webpack'
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver'
 
+const path = require('path')
 const {UnifiedWebpackPluginV5} = require('weapp-tailwindcss/webpack')
 const config = {
   projectName: 'ufanzu-applet',
@@ -34,6 +35,7 @@ const config = {
     enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
   sass: {
+    resource: [path.resolve(__dirname, '..', 'src/custom_theme.scss')],
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`,
   },
   mini: {

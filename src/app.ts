@@ -2,7 +2,6 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import './app.scss'
-import './global.css'
 const App = createApp({
   onShow(options) {
     console.log(options)
@@ -13,7 +12,8 @@ const App = createApp({
   //   return h('block', this.$slots.default)
   // },
 })
-
+const pinia = createPinia()
+App.use(pinia)
 App.use(createPinia())
 
 export default App
