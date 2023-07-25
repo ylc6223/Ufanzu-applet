@@ -34,7 +34,7 @@ import Vue from 'vue'
 import Taro from '@tarojs/taro'
 import api from '../../utils/api'
 import { timeagoInst, GlobalState, IThreadProps, prettyHTML } from '../../utils/api'
-import Thread from '../../components/thread.vue'
+import Thread from '@/components/thread-item.vue'
 import Loading from '../../components/loading.vue'
 import './index.css'
 export default {

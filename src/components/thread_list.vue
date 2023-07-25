@@ -1,7 +1,7 @@
 <template>
   <view className="thread-list">
     <Loading v-if="loading"/>
-    <Thread
+    <thread-item
       v-else
       v-for="t in threads"
       :key="t.id"
@@ -11,13 +11,12 @@
       :replies="t.replies"
       :tid="t.id"
       :member="t.member"
-      :not_navi="t.not_navi"
     />
   </view>
 </template>
 
 <script setup lang="ts">
-import Thread from './thread.vue'
+import ThreadItem from './thread-item.vue'
 import Loading from './loading.vue'
 
 interface Props {

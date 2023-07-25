@@ -8,7 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Loading: typeof import('./src/components/loading.vue')['default']
-    Thread: typeof import('./src/components/thread.vue')['default']
     Thread_list: typeof import('./src/components/thread_list.vue')['default']
+    ThreadItem: typeof import('./src/components/thread-item.vue')['default']
   }
 }

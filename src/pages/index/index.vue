@@ -16,7 +16,7 @@ try {
     url: api.getLatestTopic(),
     success(res) {
       loading.value = false
-      threads.value = res.data
+      threads.value = JSON.parse(JSON.stringify(res.data))
     },
   })
 } catch (error) {

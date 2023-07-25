@@ -34,22 +34,22 @@ interface Props {
   last_modified: number
   replies: string
   node: object
-  not_navi: boolean
+  // not_navi: boolean
   tid: string
 
   [prop: string]: any
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  not_navi: false,
+withDefaults(defineProps<Props>(), {
+  // not_navi: false,
 })
 const time = computed(() => {
   return timeagoInst.format(last_modified * 1000, 'zh')
 })
 
-const usernameCls = computed(() => {
-  return `author ${not_navi ? 'bold' : ''}`
-})
+// const usernameCls = computed(() => {
+//   return `author ${not_navi ? 'bold' : ''}`
+// })
 
 function handleNavigate() {
   // const { tid, not_navi } = this.$props
