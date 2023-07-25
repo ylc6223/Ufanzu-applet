@@ -11,7 +11,7 @@
       :replies="t.replies"
       :tid="t.id"
       :member="t.member"
-      :not_navi=
+      :not_navi="t.not_navi"
     />
   </view>
 </template>

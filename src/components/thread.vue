@@ -1,8 +1,5 @@
 <template>
-  <view
-      class="thread p-6 max-w-[200px] mx-auto rounded-xl shadow-lg flex items-center space-x-4"
-      @tap="handleNavigate"
-  >
+  <view @tap="handleNavigate">
     <view class="flex items-center justify-center">123</view>
     <view class="info">
       <view>
@@ -27,7 +24,8 @@
 import {computed} from 'vue'
 // import { eventCenter } from '@tarojs/taro'
 // import Taro from '@tarojs/taro'
-import { timeagoInst, Thread_DETAIL_NAVIGATE } from '../utils/api'
+// import { timeagoInst, Thread_DETAIL_NAVIGATE } from '../utils/api'
+import {timeagoInst} from '../utils/api'
 import './thread.css'
 
 interface Props {
@@ -39,7 +37,7 @@ interface Props {
   not_navi: boolean
   tid: string
 
-  [propertyName: string]: any
+  [prop: string]: any
 }
 
 const props = withDefaults(defineProps<Props>(), {
