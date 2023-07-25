@@ -1,10 +1,11 @@
 //获取最新主题
 const getLatestTopic = function () {
-  return 'https://my-json-server.typicode.com/ylc6223/ufanzu-applet/threads'
+  return 'https://my-json-server.typicode.com/ylc6223/Ufanzu-applet/threads'
 }
-export const timeagoInst = function () {
-  const url: string = 'api/timeagoInst'
-  return url
+export const timeagoInst = {
+  format: (timestamp: number, timeZone: string): string => {
+    return new Date(timestamp).toLocaleString(timeZone)
+  },
 }
 export const Thread_DETAIL_NAVIGATE = function () {
   const url: string = 'api/Thread_DETAIL_NAVIGATE'
@@ -29,5 +30,5 @@ export default {
   Thread_DETAIL_NAVIGATE,
   GlobalState,
   IThreadProps,
-  prettyHTML
+  prettyHTML,
 }

@@ -26,7 +26,7 @@ onMounted(async () => {
 })
 </script>
 <style scoped lang="scss">
-.index{
+.index {
   min-height: 100vh;
 }
 </style>
