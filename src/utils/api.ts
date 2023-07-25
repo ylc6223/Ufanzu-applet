@@ -1,6 +1,6 @@
 //获取最新主题
 const getLatestTopic = function () {
-  return 'https://my-json-server.typicode.com/ylc6223/Ufanzu-applet/threads'
+  return 'https://my-json-server.typicode.com/ylc6223/ufanzu-applet/threads'
 }
 export const timeagoInst = function () {
   const url: string = 'api/timeagoInst'
