@@ -36,7 +36,7 @@ const config = {
   },
   sass: {
     resource: [path.resolve(__dirname, '..', 'src/custom_theme.scss')],
-    data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`,
+    // data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`,
   },
   mini: {
     webpackChain(chain, webpack) {

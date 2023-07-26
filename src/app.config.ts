@@ -9,35 +9,35 @@ export default defineAppConfig({
   tabBar: {
     list: [
       {
-        pagePath: 'pages/index/index',
-        iconPath: '',
-        selectedIconPath: '',
-        text: '',
+          pagePath: 'pages/index/index',
+          // iconPath: '',
+          // selectedIconPath: '',
+          text: '',
       },
-      {
-        iconPath: '',
-        selectedIconPath: '',
-        pagePath: 'pages/favorites/index',
-        text: '',
-      },
-      {
-        iconPath: '',
-        selectedIconPath: '',
-        pagePath: 'pages/form/index',
-        text: '',
-      },
-      {
-        iconPath: '',
-        selectedIconPath: '',
-        pagePath: 'pages/message/index',
-        text: '',
-      },
-      {
-        iconPath: '',
-        selectedIconPath: '',
-        pagePath: 'pages/profile/index',
-        text: '',
-      },
+        {
+            pagePath: 'pages/favorites/index',
+            // iconPath: '',
+            // selectedIconPath: '',
+            text: '',
+        },
+        {
+            pagePath: 'pages/form/index',
+            // iconPath: '',
+            // selectedIconPath: '',
+            text: '',
+        },
+        {
+            pagePath: 'pages/message/index',
+            // iconPath: '',
+            // selectedIconPath: '',
+            text: '',
+        },
+        {
+            pagePath: 'pages/profile/index',
+            // iconPath: '',
+            // selectedIconPath: '',
+            text: '',
+        },
     ],
     color: '#333',
     selectedColor: '#008c8c',
@@ -45,9 +45,9 @@ export default defineAppConfig({
     borderStyle: 'black',
   },
   window: {
-    backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'V2EX',
-    navigationBarTextStyle: 'black',
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '有房住',
+      navigationBarTextStyle: 'black',
   },
 })

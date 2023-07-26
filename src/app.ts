@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import './app.scss'
+import './custom_theme.scss'
 const App = createApp({
   onShow(options) {
     console.log(options)
