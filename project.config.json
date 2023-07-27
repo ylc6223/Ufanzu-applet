@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "ufanzu-applet",
   "description": "这是一个用于发布合租信息的小程序",
-  "appid": "touristappid",
+  "appid": "wx09be598190aa8444",
   "setting": {
     "urlCheck": true,
     "es6": false,
