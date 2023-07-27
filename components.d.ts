@@ -7,19 +7,19 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-      NutButton: typeof import('@nutui/nutui-taro')['Button']
-      NutCell: typeof import('@nutui/nutui-taro')['Cell']
-      NutConfigProvider: typeof import('@nutui/nutui-taro')['ConfigProvider']
-      NutGrid: typeof import('@nutui/nutui-taro')['Grid']
-      NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
-      NutNavbar: typeof import('@nutui/nutui-taro')['Navbar']
-      NutSwipe: typeof import('@nutui/nutui-taro')['Swipe']
-      NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
-      NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
-      NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
-      NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
-      NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
-      NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
-      NutTag: typeof import('@nutui/nutui-taro')['Tag']
+    NutButton: typeof import('@nutui/nutui-taro')['Button']
+    NutCell: typeof import('@nutui/nutui-taro')['Cell']
+    NutConfigProvider: typeof import('@nutui/nutui-taro')['ConfigProvider']
+    NutGrid: typeof import('@nutui/nutui-taro')['Grid']
+    NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
+    NutNavbar: typeof import('@nutui/nutui-taro')['Navbar']
+    NutSwipe: typeof import('@nutui/nutui-taro')['Swipe']
+    NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
+    NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
+    NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
+    NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
+    NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
+    NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
+    NutTag: typeof import('@nutui/nutui-taro')['Tag']
   }
 }
