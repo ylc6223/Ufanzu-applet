@@ -5,11 +5,11 @@
         <view class="w-full" :class="{ 'navbar-fixed': true }">
           <view class="status-bar bg-white" :style="{ height: statusBarHeight + 'px' }"></view>
           <nut-navbar
-              @on-click-back="back"
-              @on-click-title="title"
-              @on-click-right="rightClick"
-              :border="true"
-              desc=""
+            @on-click-back="back"
+            @on-click-title="title"
+            @on-click-right="rightClick"
+            :border="true"
+            desc=""
           >
             <template #left>
               <view class="flex items-center">
@@ -29,40 +29,40 @@
         <view class="placeholder" :style="{ height: statusBarHeight + 44 + 'px' }"></view>
         <view class="w-full">
           <nut-swiper
-              :init-page="page"
-              :pagination-visible="true"
-              pagination-color="#426543"
-              auto-play="3000"
+            :init-page="page"
+            :pagination-visible="true"
+            pagination-color="#426543"
+            auto-play="3000"
           >
             <nut-swiper-item>
-              <img src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg" alt=""/>
+              <img src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg" alt="" />
             </nut-swiper-item>
             <nut-swiper-item>
-              <img src="https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg" alt=""/>
+              <img src="https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg" alt="" />
             </nut-swiper-item>
             <nut-swiper-item>
-              <img src="https://storage.360buyimg.com/jdc-article/welcomenutui.jpg" alt=""/>
+              <img src="https://storage.360buyimg.com/jdc-article/welcomenutui.jpg" alt="" />
             </nut-swiper-item>
             <nut-swiper-item>
-              <img src="https://storage.360buyimg.com/jdc-article/fristfabu.jpg" alt=""/>
+              <img src="https://storage.360buyimg.com/jdc-article/fristfabu.jpg" alt="" />
             </nut-swiper-item>
           </nut-swiper>
         </view>
         <nut-grid :column-num="5" :gutter="10" reverse :border="false">
           <nut-grid-item text="合租">
-            <Home/>
+            <Home />
           </nut-grid-item>
           <nut-grid-item text="整租">
-            <Home/>
+            <Home />
           </nut-grid-item>
           <nut-grid-item text="公寓">
-            <Home/>
+            <Home />
           </nut-grid-item>
           <nut-grid-item text="求租">
-            <Home/>
+            <Home />
           </nut-grid-item>
           <nut-grid-item text="优选">
-            <Home/>
+            <Home />
           </nut-grid-item>
         </nut-grid>
         <view class="px-4">
@@ -71,9 +71,9 @@
             <text class="block text-neutral-700 my-2">{{ tItem.desc }}</text>
             <view class="grid grid-cols-2 gap-2">
               <view
-                  v-for="(item, idx) in listings"
-                  :key="idx"
-                  class="overflow-hidden bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700"
+                v-for="(item, idx) in listings"
+                :key="idx"
+                class="overflow-hidden bg-white border border-gray-200 rounded-2xl shadow dark:border-gray-700"
               >
                 <view class="thumbnail w-full">
                   <image class="w-full" :src="item.imgUrl"></image>
@@ -86,14 +86,12 @@
                     <text class="region w-full">{{ item.region }}</text>
                   </view>
                   <view class="flex items-center truncate">
-                    <text class="text-neutral-800 text-sm address shrink-0">{{
-                        item.address
-                      }}
+                    <text class="text-neutral-800 text-sm address shrink-0"
+                      >{{ item.address }}
                     </text>
                     <text class="text-neutral-800 text-sm price shrink-0"
-                    >￥{{ item.price }}/月
-                    </text
-                    >
+                      >￥{{ item.price }}/月
+                    </text>
                   </view>
                   <view class="flex items-center">
                     <text class="text-neutral-800 text-sm houseType">{{ item.type }}</text>
@@ -109,22 +107,22 @@
 
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
-          v-for="(item, idx) in tabs"
-          :key="idx"
-          :tab-title="item.title"
-          :icon="item.icon"
+        v-for="(item, idx) in tabs"
+        :key="idx"
+        :tab-title="item.title"
+        :icon="item.icon"
       ></nut-tabbar-item>
     </nut-tabbar>
   </view>
 </template>
 
 <script setup lang="ts">
-import {reactive, ref, onMounted, computed} from 'vue'
-import {Locationg3, Horizontal, Search, Home} from '@nutui/icons-vue-taro'
+import { reactive, ref, onMounted, computed } from 'vue'
+import { Locationg3, Horizontal, Search, Home } from '@nutui/icons-vue-taro'
 import Taro from '@tarojs/taro'
 
 Taro.hideTabBar()
-import {useStore} from '../../stores'
+import { useStore } from '../../stores'
 
 const store = useStore()
 const statusBarHeight: any = ref(0)
@@ -197,8 +195,7 @@ onMounted(() => {
   })
 })
 
-Taro.usePageScroll((res) => {
-})
+Taro.usePageScroll((res) => {})
 
 Taro.usePullDownRefresh(() => {
   setTimeout(() => {

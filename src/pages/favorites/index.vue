@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <nut-config-provider :theme-vars="themeVars">
+    <nut-config-provider v-if="false" :theme-vars="themeVars">
       <view>
         <nut-tabs v-model="tab1value" background="#FFF">
           <nut-tab-pane title="钟意房源" :auto-height="true">
@@ -9,7 +9,7 @@
             </view>
             <view class="w-full box-border">
               <nut-swipe>
-                <nut-cell round-radius="0" title="左滑删除"/>
+                <nut-cell round-radius="0" title="左滑删除" />
                 <template #right>
                   <nut-button shape="square" style="height: 100%" type="danger">删除</nut-button>
                 </template>
@@ -20,24 +20,29 @@
         </nut-tabs>
       </view>
     </nut-config-provider>
-
+    <nut-swipe>
+      <nut-cell round-radius="0" title="左滑删除" />
+      <template #right>
+        <nut-button shape="square" style="height: 100%" type="danger">删除</nut-button>
+      </template>
+    </nut-swipe>
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
-          v-for="(item, idx) in tabs"
-          :key="idx"
-          :tab-title="item.title"
-          :icon="item.icon"
+        v-for="(item, idx) in tabs"
+        :key="idx"
+        :tab-title="item.title"
+        :icon="item.icon"
       ></nut-tabbar-item>
     </nut-tabbar>
   </view>
 </template>
 
 <script setup lang="ts">
-import {reactive, ref, computed} from 'vue'
+import { reactive, ref, computed } from 'vue'
 import Taro from '@tarojs/taro'
 
 Taro.hideTabBar()
-import {useStore} from '../../stores'
+import { useStore } from '../../stores'
 
 const store = useStore()
 const tabs = computed(() => store.tabs)
