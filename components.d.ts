@@ -18,9 +18,7 @@ declare module '@vue/runtime-core' {
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
     NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
-    NutTabPane: typeof import('@nutui/nutui-taro')['TabPane']
-    NutTabs: typeof import('@nutui/nutui-taro')['Tabs']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
-      UfzTabs: typeof import('./src/components/ufz-tabs/index.vue')['default']
+    UfzTabs: typeof import('./src/components/ufz-tabs/index.vue')['default']
   }
 }
