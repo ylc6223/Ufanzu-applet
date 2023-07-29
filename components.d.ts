@@ -13,6 +13,8 @@ declare module '@vue/runtime-core' {
     NutGrid: typeof import('@nutui/nutui-taro')['Grid']
     NutGridItem: typeof import('@nutui/nutui-taro')['GridItem']
     NutNavbar: typeof import('@nutui/nutui-taro')['Navbar']
+    NutPopup: typeof import('@nutui/nutui-taro')['Popup']
+    NutSideNavbar: typeof import('@nutui/nutui-taro')['SideNavbar']
     NutSwipe: typeof import('@nutui/nutui-taro')['Swipe']
     NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
     NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']

@@ -5,11 +5,11 @@
         <view class="w-full" :class="{ 'navbar-fixed': true }">
           <view class="status-bar bg-white" :style="{ height: statusBarHeight + 'px' }"></view>
           <nut-navbar
-            @on-click-back="back"
-            @on-click-title="title"
-            @on-click-right="rightClick"
-            :border="true"
-            desc=""
+              @on-click-back="drawerVisible"
+              @on-click-title="title"
+              @on-click-right="rightClick"
+              :border="true"
+              desc=""
           >
             <template #left>
               <view class="flex items-center">
@@ -26,7 +26,7 @@
             </template>
           </nut-navbar>
         </view>
-        <view class="placeholder" :style="{ height: statusBarHeight + 44 + 'px' }"></view>
+        <view class="placeholder" :style="{ height: statusBarHeight + 'px' }"></view>
         <view class="w-full">
           <nut-swiper
             :init-page="page"
@@ -104,13 +104,27 @@
         </view>
       </view>
     </nut-config-provider>
-
+    <nut-popup
+        position="left"
+        :zIndex="9999"
+        duration="0.5"
+        v-model:visible="showDrawer"
+        :style="{ width, height }"
+    >
+      <nut-side-navbar>
+        <view class="px-4 pb-4" :style="{ paddingTop: statusBarHeight + 44 + 'px' }">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet quidem sit
+          vitae? Asperiores aut deserunt distinctio ducimus ea eaque eligendi est, eveniet labore
+          laborum modi nemo officia perferendis quos velit veniam vero!
+        </view>
+      </nut-side-navbar>
+    </nut-popup>
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
-        v-for="(item, idx) in tabs"
-        :key="idx"
-        :tab-title="item.title"
-        :icon="item.icon"
+          v-for="(item, idx) in tabs"
+          :key="idx"
+          :tab-title="item.title"
+          :icon="item.icon"
       ></nut-tabbar-item>
     </nut-tabbar>
   </view>
@@ -122,13 +136,16 @@ import { Locationg3, Horizontal, Search, Home } from '@nutui/icons-vue-taro'
 import Taro from '@tarojs/taro'
 
 Taro.hideTabBar()
-import { useStore } from '../../stores'
+import {useStore} from '../../stores'
 
 const store = useStore()
 const statusBarHeight: any = ref(0)
 const tabs = computed(() => store.tabs)
 const active = computed(() => store.activeIndex)
 const page = ref(0)
+const showDrawer = ref(false)
+const width = ref('500rpx')
+const height = ref('100vh')
 const themeVars = reactive({
   navbarBackground: '#FFF',
   navbarMarginBottom: 0,
@@ -203,8 +220,8 @@ Taro.usePullDownRefresh(() => {
   }, 1000)
 })
 
-function back() {
-  console.log('Click Back')
+function drawerVisible() {
+  showDrawer.value = true
 }
 
 function title() {
@@ -221,7 +238,7 @@ function rightClick() {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 //@import './index.scss';

@@ -12,18 +12,31 @@
       selectedColor="#20bf6b"
     ></ufz-tabs>
     <view class="whitespace h-[80px]"></view>
-    <view class="panel_1" v-show="true">
+    <view class="panel_1" v-show="currentTab === 0">
       <view class="box-border">
-        <text class="block">10套收藏房源 </text>
-        <nut-swipe v-for="item in 10">
-          <nut-cell round-radius="0" >
-            <view class="flex">
-              <view class="w-[300px] h-[150px]">
-                <image class="w-full" src="https://img.js.design/assets/img/64b9eeb8f84878073f1d6640.png"></image>
+        <text class="block p-4">10套收藏房源</text>
+        <nut-swipe v-for="item in 2">
+          <nut-cell round-radius="0">
+            <view class="flex justify-between">
+              <view class="w-[250px] h-[200px] rounded-lg overflow-hidden">
+                <image
+                    class="w-full h-full"
+                    src="https://img.js.design/assets/img/64b9eeb8f84878073f1d6640.png"
+                ></image>
               </view>
-              <view class="flex flex-col">
+              <view class="ml-2 flex flex-col">
                 <text>白云区·三元里</text>
-                <text class="text-lg font-bold">整租·1卧1卫·逸居公馆三元里旗舰店</text>
+                <text class="font-bold">整租·1卧1卫·逸居公馆三元里旗舰店</text>
+                <view class="flex items-center">
+                  <nut-tag class="mx-0.5" color="#E9E9E9" textColor="#999999">急速预约</nut-tag>
+                  <nut-tag class="mx-0.5" color="#E9E9E9" textColor="#999999">近地铁</nut-tag>
+                  <nut-tag class="mx-0.5" color="#E9E9E9" textColor="#999999">独卫</nut-tag>
+                </view>
+                <view class="flex items-center">
+                  <text>￥</text>
+                  <text>2298</text>
+                  <text>/月</text>
+                </view>
               </view>
             </view>
           </nut-cell>
@@ -33,7 +46,7 @@
         </nut-swipe>
       </view>
     </view>
-    <view class="panel_2" v-show="false"></view>
+    <view class="panel_2" v-show="currentTab === 1"></view>
 
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
