@@ -1,23 +1,22 @@
 <template>
   <view class="container">
-    <text>我的</text>
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
-          v-for="(item, idx) in tabs"
-          :key="idx"
-          :tab-title="item.title"
-          :icon="item.icon"
+        v-for="(item, idx) in tabs"
+        :key="idx"
+        :tab-title="item.title"
+        :icon="item.icon"
       ></nut-tabbar-item>
     </nut-tabbar>
   </view>
 </template>
 
 <script setup lang="ts">
-import {computed} from 'vue'
+import { computed } from 'vue'
 import Taro from '@tarojs/taro'
 
 Taro.hideTabBar()
-import {useStore} from '../../stores'
+import { useStore } from '../../stores'
 
 const store = useStore()
 const tabs = computed(() => store.tabs)

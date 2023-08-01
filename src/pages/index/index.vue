@@ -5,11 +5,11 @@
         <view class="w-full" :class="{ 'navbar-fixed': true }">
           <view class="status-bar bg-white" :style="{ height: statusBarHeight + 'px' }"></view>
           <nut-navbar
-              @on-click-back="drawerVisible"
-              @on-click-title="title"
-              @on-click-right="rightClick"
-              :border="true"
-              desc=""
+            @on-click-back="drawerVisible"
+            @on-click-title="title"
+            @on-click-right="rightClick"
+            :border="true"
+            desc=""
           >
             <template #left>
               <view class="flex items-center">
@@ -26,7 +26,7 @@
             </template>
           </nut-navbar>
         </view>
-        <view class="placeholder" :style="{ height: statusBarHeight + 'px' }"></view>
+        <view class="placeholder" :style="{ height: statusBarHeight + 44 + 'px' }"></view>
         <view class="w-full">
           <nut-swiper
             :init-page="page"
@@ -105,11 +105,11 @@
       </view>
     </nut-config-provider>
     <nut-popup
-        position="left"
-        :zIndex="9999"
-        duration="0.5"
-        v-model:visible="showDrawer"
-        :style="{ width, height }"
+      position="left"
+      :zIndex="9999"
+      duration="0.5"
+      v-model:visible="showDrawer"
+      :style="{ width, height }"
     >
       <nut-side-navbar>
         <view class="px-4 pb-4" :style="{ paddingTop: statusBarHeight + 44 + 'px' }">
@@ -121,10 +121,10 @@
     </nut-popup>
     <nut-tabbar bottom safe-area-inset-bottom placeholder @tab-switch="tabSwitch" v-model="active">
       <nut-tabbar-item
-          v-for="(item, idx) in tabs"
-          :key="idx"
-          :tab-title="item.title"
-          :icon="item.icon"
+        v-for="(item, idx) in tabs"
+        :key="idx"
+        :tab-title="item.title"
+        :icon="item.icon"
       ></nut-tabbar-item>
     </nut-tabbar>
   </view>
@@ -136,7 +136,7 @@ import { Locationg3, Horizontal, Search, Home } from '@nutui/icons-vue-taro'
 import Taro from '@tarojs/taro'
 
 Taro.hideTabBar()
-import {useStore} from '../../stores'
+import { useStore } from '../../stores'
 
 const store = useStore()
 const statusBarHeight: any = ref(0)

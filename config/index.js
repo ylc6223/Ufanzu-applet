@@ -2,7 +2,7 @@ import Components from 'unplugin-vue-components/webpack'
 import NutUIResolver from '@nutui/nutui-taro/dist/resolver'
 
 const path = require('path')
-const {UnifiedWebpackPluginV5} = require('weapp-tailwindcss/webpack')
+const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
 const config = {
   projectName: 'ufanzu-applet',
   date: '2023-7-25',
@@ -29,7 +29,7 @@ const config = {
   framework: 'vue3',
   compiler: {
     type: 'webpack5',
-    prebundle: {enable: false},
+    prebundle: { enable: false },
   },
   cache: {
     enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
@@ -41,9 +41,9 @@ const config = {
   mini: {
     webpackChain(chain, webpack) {
       chain.plugin('unplugin-vue-components').use(
-          Components({
-            resolvers: [NutUIResolver({taro: true})],
-          })
+        Components({
+          resolvers: [NutUIResolver({ taro: true })],
+        })
       )
       chain.merge({
         plugin: {
@@ -80,13 +80,16 @@ const config = {
         },
       },
     },
+    miniCssExtractPluginOption: {
+      ignoreOrder: true,
+    },
   },
   h5: {
     webpackChain(chain) {
       chain.plugin('unplugin-vue-components').use(
-          Components({
-            resolvers: [NutUIResolver({taro: true})],
-          })
+        Components({
+          resolvers: [NutUIResolver({ taro: true })],
+        })
       )
     },
     publicPath: '/',

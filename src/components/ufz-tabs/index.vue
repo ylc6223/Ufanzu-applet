@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import {ref, computed, watch, onBeforeMount} from 'vue'
+import { ref, computed, watch, onBeforeMount } from 'vue'
 import Taro from '@tarojs/taro'
 
 const emit = defineEmits(['change'])
 
 export interface Props {
   //标签页
-  tabs?: []
+  tabs?: Array<object>
   //tabs宽度，不传值则默认使用windowWidth，单位px
   width?: number
   //rpx
@@ -80,23 +80,23 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 watch(
-    () => props.currentTab,
-    (newValue, oldValue) => {
-      checkCor()
-    }
+  () => props.currentTab,
+  (newValue, oldValue) => {
+    checkCor()
+  }
 )
 watch(
-    () => props.tabs,
-    (newValue, oldValue) => {
-      checkCor()
-    }
+  () => props.tabs,
+  (newValue, oldValue) => {
+    checkCor()
+  }
 )
 watch(
-    () => props.width,
-    (newValue, oldValue) => {
-      tabsWidth.value = newValue
-      checkCor()
-    }
+  () => props.width,
+  (newValue, oldValue) => {
+    tabsWidth.value = newValue
+    checkCor()
+  }
 )
 const getItemWidth = computed(() => {
   let width = 100 / (props.tabs.length || 4) + '%'
@@ -158,9 +158,9 @@ function swichTabs(index) {
 
 <template>
   <view
-      class="ufz-tabs-view"
-      :class="[isFixed ? 'ufz-tabs-fixed' : 'ufz-tabs-relative', unlined ? 'ufz-unlined' : '']"
-      :style="{
+    class="ufz-tabs-view"
+    :class="[isFixed ? 'ufz-tabs-fixed' : 'ufz-tabs-relative', unlined ? 'ufz-unlined' : '']"
+    :style="{
       width: tabsWidth + 'px',
       height: height + 'rpx',
       padding: `0 ${padding}rpx`,
@@ -168,19 +168,19 @@ function swichTabs(index) {
       top: isFixed ? top + 'px' : 'auto',
       zIndex: isFixed ? zIndex : 'auto',
     }"
-      v-if="tabsWidth > 0"
+    v-if="tabsWidth > 0"
   >
     <view
-        v-for="(item, index) in tabs"
-        :key="index"
-        class="ufz-tabs-item"
-        :style="{ width: getItemWidth, height: height + 'rpx' }"
-        @tap.stop="swichTabs(index)"
+      v-for="(item, index) in tabs"
+      :key="index"
+      class="ufz-tabs-item"
+      :style="{ width: getItemWidth, height: height + 'rpx' }"
+      @tap.stop="swichTabs(index)"
     >
       <view
-          class="ufz-tabs-title"
-          :class="{ 'ufz-tabs-disabled': item.disabled }"
-          :style="{
+        class="ufz-tabs-title"
+        :class="{ 'ufz-tabs-disabled': item.disabled }"
+        :style="{
           color: currentTab == index ? getSelectedColor : color,
           fontSize: size + 'rpx',
           fontWeight: bold && currentTab == index ? 'bold' : 'normal',
@@ -189,18 +189,18 @@ function swichTabs(index) {
       >
         {{ item.name }}
         <view
-            :class="[item.isDot ? 'ufz-badge__dot' : 'ufz-tabs__badge']"
-            :style="{ color: badgeColor, backgroundColor: getBadgeBgColor }"
-            v-if="item.num || item.isDot"
+          :class="[item.isDot ? 'ufz-badge__dot' : 'ufz-tabs__badge']"
+          :style="{ color: badgeColor, backgroundColor: getBadgeBgColor }"
+          v-if="item.num || item.isDot"
         >
           {{ item.isDot ? '' : item.num }}
         </view>
       </view>
     </view>
     <view
-        v-if="isSlider"
-        class="ufz-tabs-slider"
-        :style="{
+      v-if="isSlider"
+      class="ufz-tabs-slider"
+      :style="{
         transform: 'translateX(' + scrollLeft + 'px)',
         width: sliderWidth + 'rpx',
         height: sliderHeight + 'rpx',

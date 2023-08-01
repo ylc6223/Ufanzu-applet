@@ -1,5 +1,5 @@
 <template>
-  <view class="container">
+  <view class="container overflow-hidden">
     <nut-config-provider v-if="true" :theme-vars="themeVars"></nut-config-provider>
     <ufz-tabs
       :tabs="tabss"
@@ -20,8 +20,8 @@
             <view class="flex justify-between">
               <view class="w-[250px] h-[200px] rounded-lg overflow-hidden">
                 <image
-                    class="w-full h-full"
-                    src="https://img.js.design/assets/img/64b9eeb8f84878073f1d6640.png"
+                  class="w-full h-full"
+                  src="https://img.js.design/assets/img/64b9eeb8f84878073f1d6640.png"
                 ></image>
               </view>
               <view class="ml-2 flex flex-col">
@@ -80,15 +80,13 @@ const tabss = reactive([
   },
   {
     name: '找室友',
+    //   disabled: true,
   },
-  // {
-  //   name: '禁用状态',
-  //   disabled: true,
-  // },
 ])
 
 //切换tabbar
 function tabSwitch(item, index) {
+  console.log(item)
   store.switchTab(index)
 }
 
