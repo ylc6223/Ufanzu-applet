@@ -18,6 +18,9 @@
     "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
+    "types": [
+      "@tarojs/components/vue3"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],

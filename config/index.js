@@ -20,7 +20,15 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [
+    [
+      '@tarojs/plugin-html',
+      {
+        // 包含 `demo-`、`van-` 的类名选择器中的 px 单位不会被解析
+        pxtransformBlackList: [/ufz-/],
+      },
+    ],
+  ],
   defineConstants: {},
   copy: {
     patterns: [],

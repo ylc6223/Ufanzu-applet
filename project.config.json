@@ -1,5 +1,6 @@
 {
   "miniprogramRoot": "./dist",
+  "cloudfunctionRoot": "cloudfunctions/",
   "projectname": "ufanzu-applet",
   "description": "这是一个用于发布合租信息的小程序",
   "appid": "wx09be598190aa8444",

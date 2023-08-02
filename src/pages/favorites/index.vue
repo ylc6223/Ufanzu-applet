@@ -15,7 +15,7 @@
     <view class="panel_1" v-show="currentTab === 0">
       <view class="box-border">
         <text class="block p-4">10套收藏房源</text>
-        <nut-swipe v-for="item in 2">
+        <nut-swipe v-for="item in 10">
           <nut-cell round-radius="0">
             <view class="flex justify-between">
               <view class="w-[250px] h-[200px] rounded-lg overflow-hidden">

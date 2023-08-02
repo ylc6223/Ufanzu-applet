@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
     NutTag: typeof import('@nutui/nutui-taro')['Tag']
+    UfzNavigationBar: typeof import('./src/components/ufz-navigation-bar/index.vue')['default']
     UfzTabs: typeof import('./src/components/ufz-tabs/index.vue')['default']
   }
 }

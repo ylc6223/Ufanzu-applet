@@ -42,7 +42,7 @@ $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type weapp --watch # CMD
+$ set NODE_ENV=production && taro build --type weapp --open --watch # CMD
 $ NODE_ENV=production taro build --type weapp --watch # Bash
 
 小程序开发者工具

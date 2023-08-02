@@ -41,23 +41,23 @@ export const useStore = defineStore('store', {
                     name: 'my',
                     url: '/pages/profile/index',
                 },
-      ],
-    }
-  },
-  // could also be defined as
-  // state: () => ({ count: 0 })
-  actions: {
-    increment() {
-      this.count++
+            ],
+        }
     },
-    switchTab(index) {
-        const url = this.tabs[index].url
-        this.activeName = this.tabs[index].name
-        this.activeIndex = index
-        Taro.switchTab({
-            url: url,
-        })
-    },
+    // could also be defined as
+    // state: () => ({ count: 0 })
+    actions: {
+        increment() {
+            this.count++
+        },
+        switchTab(index) {
+            const url = this.tabs[index].url
+            this.activeName = this.tabs[index].name
+            this.activeIndex = index
+            Taro.switchTab({
+                url: url,
+            })
+        },
   },
 })
 
